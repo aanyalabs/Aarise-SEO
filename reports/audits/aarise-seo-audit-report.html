@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aarise SEO Audit & Week 1 Plan — Aanya Labs</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #f4f4f4;
+      --surface: #ffffff;
+      --primary: #fe4d25;
+      --secondary: #ffd02b;
+      --dark: #0d0d0d;
+      --muted: #6b6b6b;
+      --ink: #1a1a1a;
+      --border: rgba(0,0,0,0.07);
+      --green: #22c55e;
+      --red: #ef4444;
+      --yellow: #f59e0b;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--ink);
+      font-family: 'Inter', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      font-size: 12.5px;
+      line-height: 1.5;
+    }
+
+    h1, h2, h3, h4 { font-family: 'Space Grotesk', sans-serif; letter-spacing: -0.03em; }
+
+    .page {
+      width: 210mm;
+      margin: 0 auto;
+      background: var(--bg);
+      padding: 28px;
+      position: relative;
+    }
+
+    /* NAVBAR */
+    .navbar {
+      background: rgba(13,13,13,0.92);
+      backdrop-filter: blur(14px);
+      border-radius: 100px;
+      padding: 11px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 24px;
+    }
+    .logo { display: flex; align-items: center; gap: 9px; }
+    .logo-icon { width: 26px; height: 26px; background: white; border-radius: 6px; display: flex; align-items: center; justify-content: center; }
+    .logo-icon-inner { width: 12px; height: 12px; background: #0d0d0d; border-radius: 3px; }
+    .logo-text { font-family: 'Space Grotesk', sans-serif; font-weight: 700; font-size: 14px; color: white; letter-spacing: -0.02em; }
+    .nav-right { display: flex; align-items: center; gap: 10px; }
+    .nav-badge { background: var(--primary); color: white; font-size: 10px; font-weight: 600; padding: 4px 11px; border-radius: 100px; font-family: 'Space Grotesk', sans-serif; }
+    .nav-date { font-size: 10px; color: rgba(255,255,255,0.45); font-family: 'Space Grotesk', sans-serif; }
+
+    /* HERO */
+    .hero {
+      background: var(--dark);
+      border-radius: 24px;
+      padding: 36px;
+      margin-bottom: 16px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: -50px; right: -50px;
+      width: 200px; height: 200px;
+      background: var(--primary);
+      border-radius: 50%;
+      opacity: 0.1;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      bottom: -40px; left: 30%;
+      width: 150px; height: 150px;
+      background: var(--secondary);
+      border-radius: 50%;
+      opacity: 0.06;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(254,77,37,0.15);
+      border: 1px solid rgba(254,77,37,0.3);
+      color: var(--primary);
+      font-size: 10px; font-weight: 600;
+      padding: 4px 11px; border-radius: 100px;
+      margin-bottom: 16px;
+      font-family: 'Space Grotesk', sans-serif;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
+    .hero-tag::before { content: ""; width: 5px; height: 5px; background: var(--primary); border-radius: 50%; }
+    .hero h1 {
+      font-size: 36px; font-weight: 800; color: white;
+      line-height: 0.95; letter-spacing: -0.045em; margin-bottom: 14px;
+    }
+    .hero h1 span { color: var(--primary); }
+    .hero h1 .yellow { color: var(--secondary); }
+    .hero-sub { color: rgba(255,255,255,0.5); font-size: 12.5px; max-width: 460px; line-height: 1.7; margin-bottom: 24px; }
+    .hero-meta { display: flex; gap: 28px; }
+    .hero-meta-item { display: flex; flex-direction: column; gap: 2px; }
+    .hero-meta-label { font-size: 9px; color: rgba(255,255,255,0.35); text-transform: uppercase; letter-spacing: 0.09em; font-weight: 500; }
+    .hero-meta-value { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 600; color: white; }
+
+    /* SECTION LABEL */
+    .section-label { font-size: 9.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: var(--muted); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif; }
+    .section-label-light { font-size: 9.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(255,255,255,0.4); margin-bottom: 12px; font-family: 'Space Grotesk', sans-serif; }
+
+    /* GRIDS */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 12px; margin-bottom: 14px; }
+
+    /* CARDS */
+    .card { background: white; border-radius: 18px; padding: 20px; border: 1px solid var(--border); }
+    .card-dark { background: var(--dark); border-radius: 18px; padding: 20px; color: white; }
+    .card-orange { background: var(--primary); border-radius: 18px; padding: 20px; color: white; }
+    .card-yellow { background: var(--secondary); border-radius: 18px; padding: 20px; color: var(--dark); }
+    .card-full { background: white; border-radius: 18px; padding: 20px 24px; border: 1px solid var(--border); margin-bottom: 14px; }
+
+    .card h3 { font-size: 15px; font-weight: 700; color: var(--dark); margin-bottom: 6px; }
+    .card-dark h3, .card-orange h3 { color: white; font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .card-yellow h3 { color: var(--dark); font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+
+    /* STAT */
+    .stat-big { font-family: 'Space Grotesk', sans-serif; font-size: 32px; font-weight: 800; line-height: 1; letter-spacing: -0.04em; }
+    .stat-label { font-size: 11px; color: var(--muted); margin-top: 4px; line-height: 1.4; }
+    .stat-label-light { font-size: 11px; color: rgba(255,255,255,0.5); margin-top: 4px; }
+
+    /* DIVIDER */
+    .divider { height: 1px; background: var(--border); margin: 10px 0; }
+    .divider-light { height: 1px; background: rgba(255,255,255,0.1); margin: 10px 0; }
+
+    /* TABLE */
+    .data-table { width: 100%; border-collapse: collapse; }
+    .data-table th { font-family: 'Space Grotesk', sans-serif; font-size: 9.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); text-align: left; padding: 7px 0; border-bottom: 1px solid var(--border); }
+    .data-table td { font-size: 12px; padding: 8px 6px 8px 0; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .data-table tr:last-child td { border-bottom: none; }
+
+    /* BADGE */
+    .badge { display: inline-block; font-size: 10px; font-weight: 600; padding: 3px 9px; border-radius: 100px; font-family: 'Space Grotesk', sans-serif; }
+    .badge-red { background: #fff0f0; color: #dc2626; }
+    .badge-green { background: #f0fdf4; color: #16a34a; }
+    .badge-yellow { background: #fffbe6; color: #b45309; }
+    .badge-blue { background: #eff6ff; color: #1d4ed8; }
+    .badge-orange { background: rgba(254,77,37,0.1); color: var(--primary); }
+
+    /* ROW ITEM */
+    .row-item { display: flex; align-items: flex-start; gap: 10px; padding: 9px 0; border-bottom: 1px solid var(--border); }
+    .row-item:last-child { border-bottom: none; }
+    .row-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; margin-top: 5px; }
+    .row-text { font-size: 12px; flex: 1; line-height: 1.5; }
+    .row-badge { flex-shrink: 0; }
+
+    /* NUM BADGE */
+    .num { width: 28px; height: 28px; border: 1.5px solid var(--dark); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; flex-shrink: 0; margin-right: 6px; }
+    .num-orange { border-color: var(--primary); background: var(--primary); color: white; }
+    .num-yellow { border-color: var(--secondary); background: var(--secondary); }
+
+    /* PILL TAG */
+    .tag { display: inline-block; background: #f0f0f0; color: var(--ink); font-size: 10.5px; font-weight: 500; padding: 3px 9px; border-radius: 100px; margin: 2px; }
+    .tag-orange { background: rgba(254,77,37,0.1); color: var(--primary); }
+
+    /* IMPACT ROW */
+    .impact-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid var(--border); }
+    .impact-row:last-child { border-bottom: none; }
+    .impact-label { font-size: 12px; color: var(--muted); }
+    .impact-value { font-family: 'Space Grotesk', sans-serif; font-size: 12px; font-weight: 700; color: var(--primary); }
+
+    /* FOOTER */
+    .footer { display: flex; align-items: center; justify-content: space-between; margin-top: 16px; padding-top: 14px; border-top: 1px solid var(--border); }
+    .footer-brand { font-family: 'Space Grotesk', sans-serif; font-size: 11px; font-weight: 700; color: var(--dark); }
+    .footer-note { font-size: 10px; color: var(--muted); }
+
+    /* CHECK LIST */
+    .check-list { list-style: none; display: flex; flex-direction: column; gap: 7px; }
+    .check-list li { display: flex; align-items: flex-start; gap: 8px; font-size: 12px; line-height: 1.5; }
+    .check-icon { width: 16px; height: 16px; border-radius: 5px; display: flex; align-items: center; justify-content: center; font-size: 9px; flex-shrink: 0; margin-top: 1px; }
+    .check-done { background: #f0fdf4; color: #16a34a; }
+    .check-bad { background: #fff0f0; color: #dc2626; }
+    .check-warn { background: #fffbe6; color: #b45309; }
+    .check-go { background: rgba(254,77,37,0.1); color: var(--primary); }
+
+    @media print {
+      @page { size: A4; margin: 0; }
+      body { background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .page { margin: 0; padding: 16px 20px; width: 100%; }
+      .card, .card-full, .card-dark, .card-orange, .card-yellow { break-inside: avoid; }
+      .grid-2, .grid-3, .grid-4 { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+
+  <!-- NAV -->
+  <div class="navbar">
+    <div class="logo">
+      <div class="logo-icon"><div class="logo-icon-inner"></div></div>
+      <span class="logo-text">Aanya Labs</span>
+    </div>
+    <div class="nav-right">
+      <span class="nav-date">July 2026</span>
+      <span class="nav-badge">SEO Audit Report</span>
+    </div>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-tag">Onboarding Audit · Week 1</div>
+    <h1>
+      Site Audit &<br/>
+      <span>Gap Analysis</span><br/>
+      <span class="yellow">+ Week 1 Plan</span>
+    </h1>
+    <p class="hero-sub">A full review of both Aarise sites — what's been done, what the data shows, where the gaps are, and exactly what we're fixing in Week 1 and why.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Sites Audited</span>
+        <span class="hero-meta-value">aarisepharma.com</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label"> </span>
+        <span class="hero-meta-value">aarisehealthcare.com</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Data Period</span>
+        <span class="hero-meta-value">Apr – Jun 2026</span>
+      </div>
+      <div class="hero-meta-item">
+        <span class="hero-meta-label">Prepared by</span>
+        <span class="hero-meta-value">Aanya Labs</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE HEALTH STATS -->
+  <div class="grid-4">
+    <div class="card">
+      <div class="section-label">Pharma Impressions</div>
+      <div class="stat-big">210K</div>
+      <div class="stat-label">Apr–Jun 2026<br/><span style="color:#f59e0b;font-weight:600">0.95% CTR avg</span></div>
+    </div>
+    <div class="card-orange">
+      <div class="section-label-light">Pharma Clicks</div>
+      <div class="stat-big" style="color:white">2,004</div>
+      <div class="stat-label-light">US: 14,458 impressions<br/><span style="color:#ffd02b;font-weight:600">only 40 clicks</span></div>
+    </div>
+    <div class="card">
+      <div class="section-label">Healthcare Impressions</div>
+      <div class="stat-big">1,786</div>
+      <div class="stat-label">Apr–Jun 2026<br/><span style="color:#ef4444;font-weight:600">only 26 clicks total</span></div>
+    </div>
+    <div class="card-dark">
+      <div class="section-label-light">GA4 Users Combined</div>
+      <div class="stat-big" style="color:white">8,098</div>
+      <div class="stat-label-light">Pharma: 7,562<br/>Healthcare: 536</div>
+    </div>
+  </div>
+
+  <!-- WHAT HAS BEEN DONE -->
+  <div class="card-full">
+    <div class="section-label">What Was Done Before We Joined</div>
+    <div class="grid-2" style="margin-bottom:0;gap:20px">
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;margin-bottom:8px;color:var(--dark)">aarisehealthcare.com</div>
+        <ul class="check-list">
+          <li><div class="check-icon check-done">✓</div><span>91 blogs published targeting research compounds</span></li>
+          <li><div class="check-icon check-done">✓</div><span>100+ product pages live (steroids, peptides, hormones)</span></li>
+          <li><div class="check-icon check-done">✓</div><span>Country pages created — Mexico, Peru, Paraguay, US</span></li>
+          <li><div class="check-icon check-done">✓</div><span>GA4 + GSC installed and tracking</span></li>
+          <li><div class="check-icon check-done">✓</div><span>59 pages indexed by Google</span></li>
+          <li><div class="check-icon check-bad">✗</div><span>Zero meta descriptions on any page</span></li>
+          <li><div class="check-icon check-bad">✗</div><span>All 91 blogs in "Uncategorized"</span></li>
+          <li><div class="check-icon check-bad">✗</div><span>32 blog titles have "Research Research" typo</span></li>
+          <li><div class="check-icon check-bad">✗</div><span>WordPress categories still set to fashion/lifestyle defaults</span></li>
+        </ul>
+      </div>
+      <div>
+        <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;margin-bottom:8px;color:var(--dark)">aarisepharma.com</div>
+        <ul class="check-list">
+          <li><div class="check-icon check-done">✓</div><span>100 blogs published — city + country targeting</span></li>
+          <li><div class="check-icon check-done">✓</div><span>Country pages for Mexico, Peru, Paraguay, US</span></li>
+          <li><div class="check-icon check-done">✓</div><span>India city pages — Haridwar, Mumbai, Delhi etc.</span></li>
+          <li><div class="check-icon check-done">✓</div><span>GA4 + GSC connected — 7,562 active users</span></li>
+          <li><div class="check-icon check-done">✓</div><span>637 keywords ranking — strong base</span></li>
+          <li><div class="check-icon check-done">✓</div><span>Product snippets showing in search (371 clicks)</span></li>
+          <li><div class="check-icon check-bad">✗</div><span>No meta descriptions — 108K impressions wasted</span></li>
+          <li><div class="check-icon check-bad">✗</div><span>US market: 14,458 impressions, 0.28% CTR</span></li>
+          <li><div class="check-icon check-warn">⚠</div><span>Off-topic blogs diluting pharma API authority</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- TARGET COUNTRY STATUS -->
+  <div class="card-full">
+    <div class="section-label">Target Market Status — Mexico · Peru · Paraguay · US</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Country</th>
+          <th>Pharma Impressions</th>
+          <th>Pharma Clicks</th>
+          <th>Pharma CTR</th>
+          <th>Health Impressions</th>
+          <th>Health Clicks</th>
+          <th>Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>🇺🇸 United States</strong></td>
+          <td><strong>14,458</strong></td>
+          <td>40</td>
+          <td style="color:#dc2626;font-weight:700">0.28%</td>
+          <td>854</td>
+          <td>4</td>
+          <td><span class="badge badge-red">Critical</span></td>
+        </tr>
+        <tr>
+          <td><strong>🇲🇽 Mexico</strong></td>
+          <td>666</td>
+          <td>10</td>
+          <td style="color:#f59e0b;font-weight:700">1.50%</td>
+          <td>12</td>
+          <td>1</td>
+          <td><span class="badge badge-yellow">Needs Work</span></td>
+        </tr>
+        <tr>
+          <td><strong>🇵🇪 Peru</strong></td>
+          <td>117</td>
+          <td>7</td>
+          <td style="color:#16a34a;font-weight:700">5.98%</td>
+          <td>0</td>
+          <td>0</td>
+          <td><span class="badge badge-yellow">Early Stage</span></td>
+        </tr>
+        <tr>
+          <td><strong>🇵🇾 Paraguay</strong></td>
+          <td>28</td>
+          <td>3</td>
+          <td style="color:#16a34a;font-weight:700">10.71%</td>
+          <td>0</td>
+          <td>0</td>
+          <td><span class="badge badge-blue">Building</span></td>
+        </tr>
+      </tbody>
+    </table>
+    <div style="margin-top:12px;padding:10px 14px;background:#fff8f0;border-radius:10px;border-left:3px solid var(--primary)">
+      <div style="font-size:11.5px;color:var(--ink)"><strong>Key insight:</strong> The US market on Pharma has 14,458 impressions but only 40 clicks — a 0.28% CTR. Industry standard for this type of page is 2–3%. This single fix could bring 200–400 additional US clicks per month.</div>
+    </div>
+  </div>
+
+  <!-- WHAT RESEARCH SAYS -->
+  <div class="card-full">
+    <div class="section-label">What 2026 SEO Research Says — Applied to Aarise</div>
+    <div class="grid-2" style="margin-bottom:0;gap:20px">
+      <div>
+        <div class="row-item">
+          <div class="row-dot" style="background:var(--primary)"></div>
+          <div class="row-text"><strong>Information Gain is now a ranking factor</strong> — Google measures how much new useful info your content adds. Template-style country blogs score near zero and get suppressed. Real content with specs, MOQ, COA info wins.</div>
+        </div>
+        <div class="row-item">
+          <div class="row-dot" style="background:var(--primary)"></div>
+          <div class="row-text"><strong>51% of B2B buyers now start on ChatGPT/Perplexity</strong> — Content needs FAQ sections and structured data so AI tools cite it. Pharma already appears in Google AI Overviews — we need to reinforce this.</div>
+        </div>
+        <div class="row-item">
+          <div class="row-dot" style="background:var(--secondary)"></div>
+          <div class="row-text"><strong>Entity SEO over keywords</strong> — Google needs to understand the site is "about" pharma APIs and research compounds. Healthcare currently signals a lifestyle/fashion site due to wrong categories.</div>
+        </div>
+      </div>
+      <div>
+        <div class="row-item">
+          <div class="row-dot" style="background:var(--primary)"></div>
+          <div class="row-text"><strong>Meta descriptions directly control CTR</strong> — Pages with no meta description show auto-generated snippets that don't convert. This explains the 0.28% US CTR on Pharma despite strong rankings.</div>
+        </div>
+        <div class="row-item">
+          <div class="row-dot" style="background:var(--secondary)"></div>
+          <div class="row-text"><strong>E-E-A-T matters for pharma content</strong> — No author bios = no trust signal. For medical/pharma content Google actively checks expertise signals. Missing on both sites.</div>
+        </div>
+        <div class="row-item">
+          <div class="row-dot" style="background:#22c55e)"></div>
+          <div class="row-text"><strong>Product + capability pages beat blogs for B2B pharma</strong> — The Pharma city pages (API Supplier in Haridwar etc.) are the right strategy. They need meta descriptions and FAQ schema to convert impressions.</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- GAPS -->
+  <div class="card-full">
+    <div class="section-label">Identified Gaps — Prioritised by Impact</div>
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Gap</th>
+          <th>Site</th>
+          <th>Impact</th>
+          <th>Effort</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><div class="num num-orange">1</div></td>
+          <td><strong>No meta descriptions on any page</strong> — Google shows random snippets, nobody clicks</td>
+          <td><span class="tag">Both</span></td>
+          <td><span class="badge badge-red">Critical</span></td>
+          <td><span class="badge badge-green">Low</span></td>
+        </tr>
+        <tr>
+          <td><div class="num num-orange">2</div></td>
+          <td><strong>"Research Research" typo in 32 blog titles</strong> — looks spammy, Google suppresses</td>
+          <td><span class="tag">Healthcare</span></td>
+          <td><span class="badge badge-red">High</span></td>
+          <td><span class="badge badge-green">Low</span></td>
+        </tr>
+        <tr>
+          <td><div class="num num-orange">3</div></td>
+          <td><strong>All 91 blogs in "Uncategorized"</strong> — Google can't understand site is about research compounds</td>
+          <td><span class="tag">Healthcare</span></td>
+          <td><span class="badge badge-red">High</span></td>
+          <td><span class="badge badge-green">Low</span></td>
+        </tr>
+        <tr>
+          <td><div class="num num-yellow">4</div></td>
+          <td><strong>108,468 impressions on Dispersible Tablets at 0.41% CTR</strong> — biggest missed opportunity</td>
+          <td><span class="tag">Pharma</span></td>
+          <td><span class="badge badge-red">Critical</span></td>
+          <td><span class="badge badge-green">Low</span></td>
+        </tr>
+        <tr>
+          <td><div class="num num-yellow">5</div></td>
+          <td><strong>Country pages are thin templates</strong> — low Information Gain score, getting suppressed</td>
+          <td><span class="tag">Both</span></td>
+          <td><span class="badge badge-yellow">Medium</span></td>
+          <td><span class="badge badge-yellow">Medium</span></td>
+        </tr>
+        <tr>
+          <td><div class="num">6</div></td>
+          <td><strong>No author bios on any blog</strong> — E-E-A-T signal missing for pharma content</td>
+          <td><span class="tag">Both</span></td>
+          <td><span class="badge badge-yellow">Medium</span></td>
+          <td><span class="badge badge-green">Low</span></td>
+        </tr>
+        <tr>
+          <td><div class="num">7</div></td>
+          <td><strong>Off-topic blogs (Clear Tone Cream, Paracetamol)</strong> — dilute pharma API authority</td>
+          <td><span class="tag">Pharma</span></td>
+          <td><span class="badge badge-yellow">Medium</span></td>
+          <td><span class="badge badge-green">Low</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- WEEK 1 PLAN -->
+  <div class="card-full">
+    <div class="section-label">Week 1 Action Plan — What We Are Doing & Why</div>
+    <div style="display:flex;flex-direction:column;gap:12px">
+
+      <div style="display:flex;gap:14px;padding:14px;background:#fff8f0;border-radius:14px;border:1px solid rgba(254,77,37,0.15)">
+        <div class="num num-orange" style="margin-top:2px">1</div>
+        <div style="flex:1">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;margin-bottom:4px">Fix meta descriptions — Dispersible Tablets + all US pages on Pharma</div>
+          <div style="font-size:11.5px;color:var(--muted);margin-bottom:6px"><strong style="color:var(--ink)">Why:</strong> The Dispersible Tablets page has 108,468 impressions and 0.41% CTR. The US market has 14,458 impressions and 0.28% CTR. A good meta description tells the searcher exactly what they'll find and why to click. This is the highest ROI task on both sites.</div>
+          <div style="font-size:11.5px;color:var(--muted)"><strong style="color:var(--ink)">Expected impact:</strong> CTR increase from 0.41% → 2%+ on Dispersible Tablets = 1,500+ extra clicks/month. US CTR 0.28% → 1.5%+ = 150+ extra US clicks.</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <span class="badge badge-red">Priority 1</span><br/>
+          <span style="font-size:10px;color:var(--muted);margin-top:4px;display:block">Via API</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:14px;padding:14px;background:#fff8f0;border-radius:14px;border:1px solid rgba(254,77,37,0.15)">
+        <div class="num num-orange" style="margin-top:2px">2</div>
+        <div style="flex:1">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;margin-bottom:4px">Fix 32 "Research Research" title typos on Healthcare</div>
+          <div style="font-size:11.5px;color:var(--muted);margin-bottom:6px"><strong style="color:var(--ink)">Why:</strong> Google's spam detection flags repeated words in titles as low-quality content. These 32 posts are likely being suppressed or ranked lower because of this. Fixing them signals content quality improvement.</div>
+          <div style="font-size:11.5px;color:var(--muted)"><strong style="color:var(--ink)">Expected impact:</strong> These pages begin ranking properly. Impressions start growing for country-targeted content within 2–4 weeks.</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <span class="badge badge-red">Priority 1</span><br/>
+          <span style="font-size:10px;color:var(--muted);margin-top:4px;display:block">Via API</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:14px;padding:14px;background:#fffbe6;border-radius:14px;border:1px solid rgba(245,158,11,0.2)">
+        <div class="num num-yellow" style="margin-top:2px">3</div>
+        <div style="flex:1">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;margin-bottom:4px">Fix Healthcare site categories — create Peptides, Steroids, Hormones, Research Compounds</div>
+          <div style="font-size:11.5px;color:var(--muted);margin-bottom:6px"><strong style="color:var(--ink)">Why:</strong> Currently all 91 blogs are "Uncategorized" and the site has default WordPress tags like "Fashion" and "Trending Outfit." Google uses site taxonomy to understand what a site is about. Right now it can't tell Healthcare is a pharma site.</div>
+          <div style="font-size:11.5px;color:var(--muted)"><strong style="color:var(--ink)">Expected impact:</strong> Site-wide authority improvement. Google starts associating the domain with research compound keywords. Rankings across all pages improve gradually.</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <span class="badge badge-yellow">Priority 2</span><br/>
+          <span style="font-size:10px;color:var(--muted);margin-top:4px;display:block">Via API</span>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:14px;padding:14px;background:#fffbe6;border-radius:14px;border:1px solid rgba(245,158,11,0.2)">
+        <div class="num num-yellow" style="margin-top:2px">4</div>
+        <div style="flex:1">
+          <div style="font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:13px;margin-bottom:4px">Add meta descriptions to all 48 country-targeted pages — both sites</div>
+          <div style="font-size:11.5px;color:var(--muted);margin-bottom:6px"><strong style="color:var(--ink)">Why:</strong> Mexico, Peru, Paraguay, US pages exist on both sites but have near-zero CTR despite having impressions. Each page needs a targeted meta description that speaks to the buyer in that country — "Bulk steroid API supplier shipping to Mexico..."</div>
+          <div style="font-size:11.5px;color:var(--muted)"><strong style="color:var(--ink)">Expected impact:</strong> Direct CTR increase across all 4 target markets. Most measurable result of Week 1.</div>
+        </div>
+        <div style="text-align:right;flex-shrink:0">
+          <span class="badge badge-yellow">Priority 2</span><br/>
+          <span style="font-size:10px;color:var(--muted);margin-top:4px;display:block">Via API</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- EXPECTED IMPACT -->
+  <div class="grid-2">
+    <div class="card-dark">
+      <div class="section-label-light">Expected Impact — End of Week 1</div>
+      <div class="impact-row" style="border-color:rgba(255,255,255,0.08)">
+        <span style="font-size:12px;color:rgba(255,255,255,0.6)">Dispersible Tablets CTR</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--secondary)">0.41% → 1.5–2%</span>
+      </div>
+      <div class="impact-row" style="border-color:rgba(255,255,255,0.08)">
+        <span style="font-size:12px;color:rgba(255,255,255,0.6)">US market clicks (Pharma)</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--secondary)">40 → 150+/month</span>
+      </div>
+      <div class="impact-row" style="border-color:rgba(255,255,255,0.08)">
+        <span style="font-size:12px;color:rgba(255,255,255,0.6)">Healthcare indexing</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--secondary)">59 → 100+ pages</span>
+      </div>
+      <div class="impact-row" style="border-color:rgba(255,255,255,0.08)">
+        <span style="font-size:12px;color:rgba(255,255,255,0.6)">"Research Research" titles fixed</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--secondary)">32 pages</span>
+      </div>
+      <div class="impact-row" style="border-color:rgba(255,255,255,0.08)">
+        <span style="font-size:12px;color:rgba(255,255,255,0.6)">Meta descriptions added</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--secondary)">50+ pages</span>
+      </div>
+      <div class="impact-row" style="border-color:transparent">
+        <span style="font-size:12px;color:rgba(255,255,255,0.6)">Country pages optimised</span>
+        <span style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--secondary)">48 pages</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="section-label">Blogs Currently Working vs Not</div>
+      <div style="margin-bottom:10px">
+        <div style="font-size:10.5px;font-weight:600;color:var(--green);margin-bottom:6px;font-family:'Space Grotesk',sans-serif">✅ WORKING — Pharma</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.8">
+          Dispersible Tablets (440 clicks)<br/>
+          API Supplier from India (33 clicks)<br/>
+          Medicated Toothpaste (15 clicks)<br/>
+          COA & MSDS Guide (10 clicks)
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div style="margin-bottom:10px">
+        <div style="font-size:10.5px;font-weight:600;color:var(--red);margin-bottom:6px;font-family:'Space Grotesk',sans-serif">❌ NOT WORKING — Healthcare</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.8">
+          All country blogs — 0 impressions<br/>
+          Semaglutide guide — 120 impressions, 0 clicks<br/>
+          Research Compounds — 59 impressions, 0 clicks
+        </div>
+      </div>
+      <div class="divider"></div>
+      <div>
+        <div style="font-size:10.5px;font-weight:600;color:var(--yellow);margin-bottom:6px;font-family:'Space Grotesk',sans-serif">⚠ IMPRESSIONS BUT NO CLICKS</div>
+        <div style="font-size:11.5px;color:var(--muted);line-height:1.8">
+          US pages — 14,458 impressions, 40 clicks<br/>
+          Dispersible Tablets — 108K impr, 0.41% CTR<br/>
+          <strong style="color:var(--ink)">Fix = meta descriptions</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    <div>
+      <div class="footer-brand">Aanya Labs</div>
+      <div class="footer-note">aanyalabs.tech · Confidential</div>
+    </div>
+    <div style="text-align:center">
+      <div class="footer-note">Audit Period: April – June 2026</div>
+      <div class="footer-note">Report Date: July 2026</div>
+    </div>
+    <div style="text-align:right">
+      <div style="font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--primary)">Week 1 starts now</div>
+      <div class="footer-note">All fixes via WordPress API</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>
