@@ -1,0 +1,23 @@
+# Secrets — never commit
+.env
+.env.*
+*.credentials.json
+*service-account*.json
+
+# Python
+__pycache__/
+*.pyc
+venv/
+.venv/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Scratch
+scratch/
+tmp/
+untitled folder/
+
+# Browser automation debug artifacts
+.playwright-mcp/

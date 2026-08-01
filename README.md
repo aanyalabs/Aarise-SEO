@@ -26,9 +26,11 @@ SEO, AEO, and GEO strategy for two client sites managed on a ₹8,000/month reta
 
 ---
 
-## Quick Status (as of July 23, 2026)
+## Quick Status (as of August 1, 2026)
 
 | Site | SEO Plugin | Domain Focus | Top Ranking |
 |------|-----------|--------------|-------------|
-| aarisepharma.com | Yoast | India domestic, API manufacturing | #2 "dispersible tablets uses" |
-| aarisehealthcare.com | RankMath | Latin America research compounds | #3 "buy research compounds paraguay" |
+| aarisepharma.com | Yoast | India domestic + 18-country export (API manufacturing) | #4-5 "dispersible tablets uses" |
+| aarisehealthcare.com | RankMath | Latin America + 18-country research compounds | #3 "buy research compounds paraguay" |
+
+Country targeting expanded from 4 (US, Mexico, Peru, Paraguay) to 18 across both sites — see `fixes-applied.md` (August 1, 2026 entry) for the full build log, bugs found/fixed, and outstanding items. GSC service-account access is now live on both properties (previously assumed but unverified — see same entry).
