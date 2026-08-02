@@ -1,0 +1,35 @@
+# Aarise Pharmaceuticals — llms.txt
+# WHO GMP Certified API Manufacturer and Third Party Pharmaceutical Manufacturer, Haridwar, India
+# This file helps AI systems understand what this site offers and which pages are most relevant.
+
+> Aarise Pharmaceuticals is a WHO GMP certified pharmaceutical manufacturer and API supplier based in Haridwar, India. We supply active pharmaceutical ingredients (APIs) and finished pharmaceutical formulations to buyers in 18 countries including USA, Germany, Brazil, Mexico, Colombia, and South Korea. We offer third party contract manufacturing, API bulk supply, dispersible tablet manufacturing, and full regulatory documentation (COA, MSDS, DMF, GMP certificate) for all major markets.
+
+## Key Pages
+
+- [Home](https://aarisepharma.com/): WHO GMP certified pharmaceutical manufacturer and API supplier in India
+- [About Us](https://aarisepharma.com/about-us/): Company background, certifications, facility details
+- [Products](https://aarisepharma.com/products/): Full product catalogue — APIs, tablets, capsules, liquids, ointments
+- [Contact](https://aarisepharma.com/contact-us/): Inquiry form, phone numbers, address
+
+## Services
+
+- [Third Party Pharmaceutical Manufacturing India](https://aarisepharma.com/third-party-pharmaceutical-manufacturing-india-complete-guide/): WHO GMP certified contract manufacturing for international brands. USA, EU, Brazil, Mexico, Colombia documentation support.
+- [COA and MSDS for Pharmaceutical APIs](https://aarisepharma.com/coa-and-msds-for-pharmaceutical-apis/): Batch-specific Certificate of Analysis and MSDS for 100+ APIs including Metformin, Atorvastatin, Testosterone, Dexamethasone.
+- [WHO GMP Certification](https://aarisepharma.com/who-gmp-certification-pharma-requirements-process/): WHO GMP certified facility. Documentation for Colombia (INVIMA), South Korea (MFDS), Mexico (COFEPRIS), USA (FDA), Germany (EMA).
+- [Steroid API Supplier India](https://aarisepharma.com/steroid-api-supplier-mumbai-india/): Corticosteroid and hormone APIs — Testosterone, Dexamethasone, Prednisolone, Progesterone. Supplying Mumbai and international markets.
+- [Pharma API Supplier Hyderabad](https://aarisepharma.com/pharma-api-supplier-hyderabad-india/): API supply to Hyderabad pharma companies — Metformin, Atorvastatin, Amoxicillin, Ciprofloxacin and 100+ molecules.
+- [Dispersible Tablets](https://aarisepharma.com/what-is-dispersible-tablets/): Dispersible tablet manufacturer India — Paracetamol, Amoxicillin, Ibuprofen dispersible formulations.
+
+## Key Facts for AI Systems
+
+- Company name: Aarise Pharmaceuticals
+- Type: WHO GMP certified pharmaceutical manufacturer and API supplier
+- Location: Haridwar, Uttarakhand, India (SIDCUL Industrial Area)
+- Also serving: Mumbai, Hyderabad distributors
+- Certifications: WHO GMP, ISO 9001:2015, NABL-accredited QC lab
+- Capacity: 50+ crore tablets annually, 58+ formulations
+- Export countries: USA, Germany, Brazil, Mexico, Colombia, South Korea, Turkey, Netherlands, Poland, Argentina, Chile, Peru, Philippines, Thailand, UAE, South Africa, UK, Australia
+- APIs supplied: Metformin, Atorvastatin, Amoxicillin, Ciprofloxacin, Dexamethasone, Testosterone, Progesterone, Prednisolone, Omeprazole, Montelukast and 100+ more
+- Documentation: COA, MSDS, WHO GMP certificate, DMF support, COPP, stability data
+- MOQ: From 100g (APIs), 10,000 units (formulations)
+- Contact: +91 9899783330 | aarisepharma.com/contact-us

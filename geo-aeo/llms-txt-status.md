@@ -7,29 +7,35 @@
 **How it works**: WordPress page at slug `llms-txt` + Code Snippet (ID 37) that intercepts `/llms.txt` requests and serves the page content as plain text.
 
 **Content covers**:
-- Company description
+- Company description (research compound supplier, pharma grade with COA)
 - Product categories (peptides, steroids, hormones, SARMs)
 - Key facts (purity, COA, shipping)
-- Supplier coverage (LATAM, NA, Europe, APAC)
-- Content map (product pages, supplier guides, blog, sitemap)
-- Preferred citation for AI responses
+- Target buyers (research institutions, licensed pharmaceutical manufacturers)
+- Disclaimer language for AI crawlers
+
+**Content file**: `llms-healthcare.txt` in this folder
 
 ---
 
-## Pharma — PENDING ⚠️
+## Pharma — LIVE ✅
 
-**URL**: https://aarisepharma.com/llms.txt  
-**Status**: Currently serves homepage (404 equivalent)
+**URL**: https://aarisepharma.com/llms-txt/ (WordPress page, published)  
+**Status**: Published to WordPress via REST API on 2026-08-03  
 
-**Why not done**: Pharma site doesn't have Code Snippets plugin and theme file editor is disabled.
+**Content covers**:
+- WHO GMP certified manufacturer description
+- Key pages with URLs (Home, About, Products, Contact)
+- All 6 service pages with descriptions
+- Key facts: certifications, capacity, 18 export countries, 100+ APIs, MOQ, contact
 
-**The llms-txt page exists** at: https://aarisepharma.com/llms-txt/ (published, noindexed)
+**Content file**: `llms-pharma.txt` in this folder
 
-### Fix — 2 options, pick one:
+### Pending for Pharma — Sabhya action needed:
+To make `/llms.txt` work as a direct URL (instead of `/llms-txt/`), Sabhya needs to either:
 
-**Option A (5 min)**: Install "Code Snippets" plugin on pharma
-1. WP Admin → Plugins → Add New → search "Code Snippets" → Install → Activate
-2. Snippets → Add New → paste this PHP:
+**Option A — Install Code Snippets plugin (5 min)**:
+1. WP Admin → Plugins → Add New → "Code Snippets" → Install → Activate
+2. Snippets → Add New → paste this PHP → Save & Activate:
 
 ```php
 add_action('init', function() {
@@ -53,20 +59,35 @@ add_action('init', function() {
 }, 1);
 ```
 
-3. Save and activate. Done.
+**Option B — .htaccess redirect (2 min)**:
+Add to .htaccess (above `# BEGIN WordPress`):
+```
+RedirectMatch 301 ^/llms.txt$ /llms-txt/
+```
 
-**Option B (2 min)**: Use WP Headers And Footers plugin (already installed)
-- WP Admin → Settings → WP Headers And Footers → PHP Snippets → add the same PHP above
-- Note: This plugin may not support raw PHP — check if it has a PHP tab
+---
+
+## FAQPage Schema — LIVE ✅
+
+Injected JSON-LD FAQPage schema into all 5 upgraded pharma pages on 2026-08-03:
+
+| Page | Post ID | FAQs |
+|------|---------|------|
+| WHO GMP | 10448 | 4 FAQs (FDA vs WHO, certificate access, country support, audit) |
+| COA MSDS | 10403 | 4 FAQs (pre-order COA, NABL lab, DMF support, API list) |
+| Third Party Manufacturing | 10430 | 4 FAQs (what is 3PM, regulated markets, MOQ, timeline) |
+| Steroid API Mumbai | 10710 | 4 FAQs (Mumbai supply, MOQ, pharmacopeial grade, export) |
+| Hyderabad API | 10717 | 4 FAQs (direct Hyderabad supply, grades, MOQ, export) |
+
+Schema injected as `<!-- AARISE-SCHEMA-START -->` blocks in post content.
 
 ---
 
 ## What AI Crawlers See
 
-Once pharma llms.txt is live, both ChatGPT, Gemini, Claude, and Perplexity crawlers will find:
-- Who Aarise is
-- What they supply
-- Where they ship
-- How to cite them in AI responses
+With both llms.txt files live and FAQPage schema on 5 pages:
+- ChatGPT, Gemini, Claude, Perplexity crawlers find the llms.txt and understand the site's purpose
+- FAQPage schema creates AI-citation-ready Q&A pairs for the most buyer-intent queries
+- Organization schema identifies Aarise as a named entity in schema.org's knowledge graph
 
-This is the foundation for GEO (Generative Engine Optimization).
+This is the foundation for GEO (Generative Engine Optimization) — getting cited in AI-generated answers.

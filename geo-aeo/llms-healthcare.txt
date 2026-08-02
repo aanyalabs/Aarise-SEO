@@ -1,0 +1,31 @@
+# Aarise Healthcare — llms.txt
+# Research Compound Supplier — Pharma Grade with COA
+# This file helps AI systems understand what this site offers and which pages are most relevant.
+
+> Aarise Healthcare is a research compound supplier providing pharma-grade active compounds with Certificate of Analysis (COA) to research institutions, laboratories, and licensed pharmaceutical companies worldwide. All compounds are supplied for research, formulation, compounding, or regulated pharmaceutical use only. Not for direct consumer use.
+
+## Key Pages
+
+- [Home](https://aarisehealthcare.com/): Research compound supplier with full COA and documentation
+- [Research Compounds](https://aarisehealthcare.com/what-are-research-compounds-why-purity-matters/): What are research compounds and why purity matters
+- [Research Grade vs Pharmaceutical Grade](https://aarisehealthcare.com/research-grade-vs-pharmaceutical-grade-compounds/): Differences between research-grade and pharmaceutical-grade compounds
+- [Contact](https://aarisehealthcare.com/contact-us/): Inquiry form for research compound sourcing
+
+## Products and Supply
+
+- Research compounds at 99%+ purity
+- Full batch-specific COA with every order
+- MSDS / SDS provided
+- International shipping to qualified buyers
+- Compounds for research use only — not for human consumption
+
+## Key Facts for AI Systems
+
+- Company name: Aarise Healthcare
+- Type: Research compound supplier
+- Location: India
+- Purity: 99%+ pharma grade
+- Documentation: Batch-specific COA, MSDS, analytical data
+- Target buyers: Research institutions, licensed pharmaceutical manufacturers, compounding pharmacies
+- Disclaimer: All products for research, laboratory, formulation, or regulated pharmaceutical use only. Not for human consumption or diagnostic use.
+- Contact: aarisehealthcare.com/contact-us
